@@ -1,12 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio Web</title>
-</head>
-<body>
-    <h1>Portafolio Web</h1>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio Web Full Stack</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- abg corté los estilos internos y los mande a la hoja de estilos. -->
     
-</body>
+    <!-- abg agregué el link a la hoja de etilos -->
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+
+  <body>
+    <div class="frame-base">
+      <!-- ========================== -->
+      <!--          HEADER            -->
+      <!-- ========================== -->
+      <header>
+        <div
+          class="content-1280 d-flex justify-content-between align-items-center">
+          <div class="d-flex gap-4">
+            <a href="#" class="text-dark text-decoration-none"> Inicio </a>
+
+          </div>
+
+          <div class="d-flex gap-4">
+            <a href="#" class="text-dark text-decoration-none">Conócenos</a>
+            <a href="#" class="text-dark text-decoration-none">Stack</a>
+            <a href="#" class="text-dark text-decoration-none">Proyectos</a>
+            <a href="#" class="text-dark text-decoration-none">Precios</a>
+            <a href="#" class="text-dark text-decoration-none">Contacto</a>
+            <a href="#" class="text-dark text-decoration-none">Link</a>
+          </div>
+
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-dark btn-sm">Sign in</button>
+            <button class="btn btn-dark btn-sm">Register</button>
+          </div>
+        </div>
+      </header>
+
+      <!-- ========================== -->
+      <!--            HERO            -->
+      <!-- ========================== -->
+      <section class="hero">
+        <div class="content-1280 h-100 position-relative">
+          <!-- Imagen de fondo / carrusel -->
+          <div class="hero-image"></div>
+
+          <!-- Texto + botones flotando -->
+          <div class="hero-content">
+            <h1 class="fw-bold display-5 mb-4">Portafolio Web Full Stack</h1>
+
+            <div class="d-flex justify-content-center gap-3">
+              <button class="btn btn-dark" style="width: 100px; height: 40px">
+                Button
+              </button>
+              <button
+                class="btn btn-outline-dark"
+                style="width: 100px; height: 40px"
+              >
+                Button
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================== -->
+      <!--     PANEL IMAGEN DOBLE     -->
+      <!-- ========================== -->
+      <section class="panel-doble">
+        <div class="content-1280 h-100">
+          <h3 class="text-center mb-4">Proyectos</h3>
+
+          <div class="row g-4" style="height: 380px">
+            <div class="col-6">
+              <div
+                class="img-rect h-100 d-flex justify-content-center align-items-center"
+              >
+                Imagen 1
+              </div>
+            </div>
+            <div class="col-6">
+              <div
+                class="img-rect h-100 d-flex justify-content-center align-items-center"
+              >
+                Imagen 2
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================== -->
+      <!--        STACK GRID          -->
+      <!-- ========================== -->
+      <section class="stack-grid">
+        <div class="content-1280 h-100">
+          <h3 class="mb-5">Stack</h3>
+
+          <div class="row row-cols-3 g-5">
+            <div class="col">
+              <h5>SQL</h5>
+              <div class="img-rect mb-2" style="height: 60px"></div>
+              <p class="small">Aquí va una imagen del logo de SQL</p>
+            </div>
+
+            <div class="col">
+              <h5>Python</h5>
+              <div class="img-rect mb-2" style="height: 60px"></div>
+              <p class="small">Aquí va una imagen del logo de Python</p>
+            </div>
+
+            <div class="col">
+              <h5>Django</h5>
+              <div class="img-rect mb-2" style="height: 60px"></div>
+              <p class="small">Aquí va una imagen del logo de Django</p>
+            </div>
+
+            <div class="col">
+              <h5>HTML</h5>
+              <div class="img-rect mb-2" style="height: 60px"></div>
+              <p class="small">Aquí va una imagen del logo HTML</p>
+            </div>
+
+            <div class="col">
+              <h5>CSS</h5>
+              <div class="img-rect mb-2" style="height: 60px"></div>
+              <p class="small">Aquí va una imagen del logo CSS</p>
+            </div>
+
+            <div class="col">
+              <h5>JavaScript</h5>
+              <div class="img-rect mb-2" style="height: 60px"></div>
+              <p class="small">Aquí va una imagen del logo JavaScript</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================== -->
+      <!--           FOOTER           -->
+      <!-- ========================== -->
+      <footer>
+        <div class="content-1280 h-100">
+          <div class="row row-cols-4 g-4 h-100">
+            <div class="col">
+              <h6>Brand / Social</h6>
+              <p class="small">Aquí van tus íconos sociales</p>
+            </div>
+
+            <div class="col">
+              <h6>Use cases</h6>
+              <p class="small">
+                UI Design<br />UX Design<br />Wireframing<br />Diagramming
+              </p>
+            </div>
+
+            <div class="col">
+              <h6>Explore</h6>
+              <p class="small">
+                Design<br />Prototyping<br />Dev Features<br />FigJam
+              </p>
+            </div>
+
+            <div class="col">
+              <h6>Resources</h6>
+              <p class="small">
+                Blog<br />Best Practices<br />Support<br />Color Wheel
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
