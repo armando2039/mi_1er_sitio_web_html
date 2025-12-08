@@ -1,0 +1,213 @@
+/* ========================================================= */
+/*                    ESTILOS BASE DE LA PÁGINA              */
+/* ========================================================= */
+
+body {
+  background: #f6f6f6;
+  font-family: system-ui, sans-serif;
+}
+
+/* Frame base: 1440×1988 */
+.frame-base {
+  width: 1440px;
+  margin: 0 auto;
+  background: #fff;
+  min-height: 1988px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.06);
+}
+
+.content-1280 {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  background: #f2f2f2;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* ========================================================= */
+/*                           HERO                            */
+/* ========================================================= */
+
+.hero {
+  height: 524px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 524px;
+  background: #dcdcdc;
+  border-radius: 8px;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+}
+
+/* ========================================================= */
+/*                  OTRAS SECCIONES (524px)                  */
+/* ========================================================= */
+
+.panel-doble,
+.stack-grid,
+footer {
+  height: 524px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.img-rect,
+.placeholder-box {
+  background: #ececec;
+  border-radius: 8px;
+}
+
+/* ========================================================= */
+/*                    MODAL DE BÚSQUEDA (FULLSCREEN)         */
+/* ========================================================= */
+
+.modal-fade {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.025);
+  backdrop-filter: blur(8px);
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+.modal-fade.mostrar {
+  display: flex !important;
+}
+
+.modal-content-buscar {
+  width: 60%;
+  max-width: 700px;
+
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(18px);
+  border-radius: 16px;
+
+  padding: 25px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+
+  animation: fadeInModal 0.25s ease;
+}
+
+/* Animación suave */
+@keyframes fadeInModal {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive buscador */
+@media (max-width: 992px) {
+  .modal-content-buscar {
+    width: 80%;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal-content-buscar {
+    width: 95%;
+    padding: 16px;
+  }
+
+  .modal-content-buscar h3 {
+    font-size: 20px;
+  }
+}
+
+/* ========================================================= */
+/*              MODAL FORMULARIO (Bootstrap Modal)           */
+/* ========================================================= */
+
+/* Ajusta el ancho del modal */
+.modal-dialog {
+  max-width: 850px;
+}
+
+/* Caja interna translúcida */
+.modal-form-inner {
+  background: rgba(255, 255, 255, 0.811);
+  backdrop-filter: blur(20px);
+
+  border-radius: 16px;
+  padding: 40px;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.044);
+}
+
+/* Fondo del modal (Bootstrap) */
+.modal-content {
+  background: transparent;
+  border: none;
+}
+
+/* Tarjeta interna del formulario */
+.form-container {
+  background: rgba(255, 255, 255, 0.531);
+  backdrop-filter: blur(15px);
+
+  padding: 30px;
+  border-radius: 16px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.028);
+}
+
+.form-container label {
+  font-weight: 600;
+}
+
+.form-container input,
+.form-container textarea,
+.form-container select {
+  backdrop-filter: blur(4px);
+  background: rgba(255,255,255,0.7);
+  border-radius: 10px !important;
+}
+
+.modal-form-inner h2 {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #222;
+  margin-bottom: 25px;
+}
+
+/* Responsive del formulario */
+@media (max-width: 768px) {
+  .modal-form-inner {
+    padding: 20px;
+  }
+
+  .form-container {
+    padding: 18px;
+  }
+}
+
+/* ========================================================= */
+/*                     AJUSTES EXTRA                         */
+/* ========================================================= */
+
+button, input, textarea, select {
+  border-radius: 8px !important;
+}
