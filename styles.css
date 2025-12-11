@@ -55,6 +55,15 @@ header {
   z-index: 10;
 }
 
+/* agregue esta clase para controlar el div del carrusel */
+.hero-carousel-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+
 /* ========================================================= */
 /*                  OTRAS SECCIONES (524px)                  */
 /* ========================================================= */
@@ -210,4 +219,38 @@ footer {
 
 button, input, textarea, select {
   border-radius: 8px !important;
+}
+
+
+/* ========================================= */
+/*       ICONOS DEL STACK — Versión limpia   */
+/* ========================================= */
+
+.tech-icon-wrap {
+  width: 105px;                     /* cuadrado más grande */
+  height: 105px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+
+  border-radius: 8px;             /* efecto moderno */
+  margin: 0 auto;                  /* centrado */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.tech-icon-wrap:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.tech-icon {
+  width: 98px;                     /* tamaño perfecto para íconos devicon */
+  height: 98px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25));
 }

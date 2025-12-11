@@ -75,7 +75,41 @@
         <!-- agregué id a la secc hero -->
         <div class="content-1280 h-100 position-relative">
           <!-- Imagen de fondo / carrusel -->
-          <div class="hero-image"></div>
+          <!-- Elimine el bloque class="hero-image" -->
+          <!-- Inserte un bloque de Bootstrap, carrusel -->
+          <div class="hero-carousel-container">
+            <div
+              id="carouselExampleSlidesOnly"
+              class="carousel slide h-100"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                  <img
+                    src="Assets/sara-kurig-CA1.jpg"
+                    class="d-block w-100 h-100 object-fit-cover"
+                    alt=""
+                  />
+                </div>
+
+                <div class="carousel-item h-100">
+                  <img
+                    src="Assets/maxim-hopman-CA2.jpg"
+                    class="d-block w-100 h-100 object-fit-cover"
+                    alt=""
+                  />
+                </div>
+
+                <div class="carousel-item h-100">
+                  <img
+                    src="Assets/drew-dizzy-graham-CA3.jpg"
+                    class="d-block w-100 h-100 object-fit-cover"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
 
           <!-- Texto + botones flotando -->
           <div class="hero-content">
@@ -137,40 +171,74 @@
           <h3 class="mb-5">Stack</h3>
 
           <div class="row row-cols-3 g-5">
-            <div class="col">
+            <div class="col text-center">
               <h5>SQL</h5>
-              <div class="img-rect mb-2" style="height: 60px"></div>
-              <p class="small">Aquí va una imagen del logo de SQL</p>
+              <div class="tech-icon-wrap">
+                <img
+                  src="Assets/sql_7506880.png"
+                  class="tech-icon"
+                  alt="css3"
+                />
+              </div>
+              <p class="small"></p>
             </div>
 
-            <div class="col">
+            <div class="col text-center">
               <h5>Python</h5>
-              <div class="img-rect mb-2" style="height: 60px"></div>
-              <p class="small">Aquí va una imagen del logo de Python</p>
+              <div class="tech-icon-wrap">
+                <img
+                  src="Assets/python-original.svg"
+                  class="tech-icon"
+                  alt="css3"
+                />
+              </div>
+              <p class="small"></p>
             </div>
 
-            <div class="col">
+            <div class="col text-center">
               <h5>Django</h5>
-              <div class="img-rect mb-2" style="height: 60px"></div>
-              <p class="small">Aquí va una imagen del logo de Django</p>
+              <div class="tech-icon-wrap">
+                <img
+                  src="Assets/django-plain-wordmark.svg"
+                  class="tech-icon"
+                  alt="css3"
+                />
+              </div>
+              <p class="small"></p>
             </div>
 
-            <div class="col">
+            <div class="col text-center">
               <h5>HTML</h5>
-              <div class="img-rect mb-2" style="height: 60px"></div>
-              <p class="small">Aquí va una imagen del logo HTML</p>
+              <div class="tech-icon-wrap">
+                <img
+                  src="Assets/html5-plain.svg"
+                  class="tech-icon"
+                  alt="css3"
+                />
+              </div>
+              <p class="small"></p>
             </div>
 
-            <div class="col">
+            <div class="col text-center">
               <h5>CSS</h5>
-              <div class="img-rect mb-2" style="height: 60px"></div>
-              <p class="small">Aquí va una imagen del logo CSS</p>
+              <div class="tech-icon-wrap">
+                <img src="Assets/css3-plain.svg" class="tech-icon" alt="css3" />
+              </div>
+              <p class="small"></p>
             </div>
 
-            <div class="col">
+            <div class="col text-center">
               <h5>JavaScript</h5>
-              <div class="img-rect mb-2" style="height: 60px"></div>
-              <p class="small">Aquí va una imagen del logo JavaScript</p>
+
+              <div class="tech-icon-wrap">
+                <img
+                  src="Assets/javascript-original.svg"
+                  class="tech-icon"
+                  alt="JavaScript"
+                />
+              </div>
+
+              <p class="small"></p>
             </div>
           </div>
         </div>
@@ -310,7 +378,7 @@
       <!-- ========================== -->
       <!--     BUSCADOR             -->
       <!-- ========================== -->
-      <!-- Modal de Búsqueda -->
+      <!-- agregué un nuevo Modal de Búsqueda -->
       <div class="modal-fade" id="modalBuscar">
         <div class="modal-content-buscar">
           <div class="p-4">
