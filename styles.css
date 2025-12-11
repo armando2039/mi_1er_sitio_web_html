@@ -63,6 +63,11 @@ header {
   border-radius: 8px;
 }
 
+.carousel-inner img {
+  object-fit: cover;
+}
+
+
 
 /* ========================================================= */
 /*                  OTRAS SECCIONES (524px)                  */
