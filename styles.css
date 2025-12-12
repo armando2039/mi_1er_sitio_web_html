@@ -2,19 +2,22 @@
 /*                    ESTILOS BASE DE LA PÁGINA              */
 /* ========================================================= */
 
+/* nuevo estilo para controlar el background estilizado */
 body {
-  background: #f6f6f6;
+  background: linear-gradient(135deg, #639cb3 0%, #a184d3 40%, #bd5b85 100%);
   font-family: system-ui, sans-serif;
 }
+
 
 /* Frame base: 1440×1988 */
 .frame-base {
   width: 1440px;
   margin: 0 auto;
-  background: #fff;
+  background: transparent; /* <- antes era #fff */
   min-height: 1988px;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.06);
 }
+
 
 .content-1280 {
   width: 1280px;
@@ -25,9 +28,16 @@ header {
   height: 80px;
   display: flex;
   align-items: center;
-  background: #f2f2f2;
-  border-bottom: 1px solid #e5e5e5;
+
+  background: rgba(255, 255, 255, 0.034);   /* transparencia */
+  backdrop-filter: blur(12px);             /* mismo blur suave */
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25); /* borde más sutil */
+
+  border-radius: 0 0 14px 14px;
 }
+
 
 /* ========================================================= */
 /*                           HERO                            */
@@ -54,6 +64,28 @@ header {
   text-align: center;
   z-index: 10;
 }
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+
+  padding: 20px 30px;
+  background: rgba(0, 0, 0, 0.35);     /* Fondo translúcido suave */
+  border-radius: 14px;
+  backdrop-filter: blur(6px);
+}
+
+.hero-content h1 {
+  color: #d3b1ee;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);   /* Glow suave */
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
 
 /* agregue esta clase para controlar el div del carrusel */
 .hero-carousel-container {
