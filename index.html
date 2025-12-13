@@ -86,7 +86,7 @@
               <div class="carousel-inner h-100">
                 <div class="carousel-item active h-100">
                   <img
-                    src="Assets/sara-kurig-CA1.jpg"
+                    src="/Assets/sara-kurig-CA1.jpg"
                     class="d-block w-100 h-100 object-fit-cover"
                     alt=""
                   />
@@ -94,7 +94,7 @@
 
                 <div class="carousel-item h-100">
                   <img
-                    src="Assets/ella-don-unsplash-CA7.jpg"
+                    src="/Assets/ella-don-unsplash-CA7.jpg"
                     class="d-block w-100 h-100 object-fit-cover"
                     alt=""
                   />
@@ -102,7 +102,7 @@
 
                 <div class="carousel-item h-100">
                   <img
-                    src="Assets/drew-dizzy-graham-CA3.jpg"
+                    src="/Assets/drew-dizzy-graham-CA3.jpg"
                     class="d-block w-100 h-100 object-fit-cover"
                     alt=""
                   />
@@ -295,13 +295,15 @@
                 <div class="form-container">
                   <h2 class="text-center mb-4">Contáctanos</h2>
 
-                  <form>
+                  <form id="formularioContacto">
                     <div class="mb-3">
                       <label class="form-label">Nombre</label>
                       <input
                         type="text"
                         class="form-control"
                         placeholder="Ingrese nombre completo"
+                        id="nombreForm"
+                        required
                       />
                     </div>
 
@@ -313,6 +315,7 @@
                         type="text"
                         class="form-control"
                         placeholder="Ingrese el nombre de la empresa que desea desarrollar el proyecto o deje en blanco"
+                        id="empresaForm"
                       />
                     </div>
 
@@ -322,6 +325,8 @@
                         type="email"
                         class="form-control"
                         placeholder="correo@ejemplo.com"
+                        id="emailForm"
+                        required
                       />
                     </div>
 
@@ -329,7 +334,7 @@
                       <label class="form-label"
                         >Tipo de Trabajo a Desarrollar</label
                       >
-                      <select class="form-select">
+                      <select class="form-select" id="tipoTrabajoForm" required>
                         <option selected disabled>Elija una opción</option>
                         <option>Digitalización de información</option>
                         <option>Escalación de base de datos</option>
@@ -347,6 +352,7 @@
                         type="text"
                         class="form-control"
                         placeholder="Ingrese el tiempo en que espera se desarrolle en totalidad el proyecto"
+                        id="duracionForm"
                       />
                     </div>
 
@@ -356,6 +362,7 @@
                         class="form-control"
                         rows="4"
                         placeholder="Ingrese una descripción detallada del proyecto"
+                        id="descripcionForm"
                       ></textarea>
                     </div>
 
@@ -421,5 +428,43 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+
+    <!--Script para Google Sheets-->
+    <script>
+      const form = document.getElementById("formularioContacto");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const data = {
+          nombre: document.getElementById("nombreForm").value,
+          empresa: document.getElementById("empresaForm").value,
+          email: document.getElementById("emailForm").value,
+          tipoTrabajo: document.getElementById("tipoTrabajoForm").value,
+          duracion: document.getElementById("duracionForm").value,
+          descripcion: document.getElementById("descripcionForm").value,
+        };
+
+        fetch(
+          "https://script.google.com/macros/s/AKfycbxAq8kn6LgXJKQCgVyyOpQUo8NvTtCcj-vsYWq9U5iw11Ds9GKf7rBekdu2ikOXV9OY/exec",
+          {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        )
+          .then((response) => response.json())
+          .then((result) => {
+            alert("Formulario enviado correctamente");
+            form.reset();
+          })
+          .catch((error) => {
+            alert("Error al enviar el formulario");
+            console.error(error);
+          });
+      });
+    </script>
   </body>
 </html>
