@@ -143,19 +143,32 @@
         <div class="content-1280 h-100">
           <h3 class="text-center mb-4">Proyectos</h3>
 
-          <div class="row g-4" style="height: 380px">
+          <div class="row g-4 panel-doble-row">
             <div class="col-6">
-              <div
-                class="img-rect h-100 d-flex justify-content-center align-items-center"
-              >
-                Imagen 1
+              <div class="card h-100 w-100">
+                <img
+                  src="Assets/pexels-sophors-PA1.jpg"
+                  class="card-img-top"
+                  alt="Proyecto"
+                />
+
+                <div class="card-body d-flex align-items-center">
+                  <p class="card-text">Descripción breve del proyecto.</p>
+                </div>
               </div>
             </div>
+
             <div class="col-6">
-              <div
-                class="img-rect h-100 d-flex justify-content-center align-items-center"
-              >
-                Imagen 2
+              <div class="card h-100 w-100">
+                <img
+                  src="Assets/pexels-cottonbro-PA2.jpg"
+                  class="card-img-top"
+                  alt="Proyecto"
+                />
+
+                <div class="card-body d-flex align-items-center">
+                  <p class="card-text">Descripción breve del proyecto.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -303,7 +316,8 @@
                         class="form-control"
                         placeholder="Ingrese nombre completo"
                         id="nombreForm"
-                        name="nombre" required
+                        name="nombre"
+                        required
                       />
                     </div>
 
@@ -327,13 +341,19 @@
                         class="form-control"
                         placeholder="correo@ejemplo.com"
                         id="emailForm"
-                        name="email" required
+                        name="email"
+                        required
                       />
                     </div>
 
                     <div class="mb-3">
                       <label class="form-label">Tipo de Trabajo</label>
-                      <select class="form-select" id="tipoTrabajoForm" name="tipoTrabajo" required>
+                      <select
+                        class="form-select"
+                        id="tipoTrabajoForm"
+                        name="tipoTrabajo"
+                        required
+                      >
                         <option selected disabled>Seleccione una Opción</option>
                         <option>Digitalización de información</option>
                         <option>Escalación de base de datos</option>
@@ -361,7 +381,8 @@
                         rows="4"
                         placeholder="Ingrese una descripción detallada del proyecto"
                         id="descripcionForm"
-                        name="descripcion" required
+                        name="descripcion"
+                        required
                       ></textarea>
                     </div>
 

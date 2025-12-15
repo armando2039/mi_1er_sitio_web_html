@@ -115,9 +115,39 @@ footer {
 
 .img-rect,
 .placeholder-box {
-  background: #ececec;
+  background: #ecececf8;
   border-radius: 8px;
 }
+
+/* Panel de Imagenes dobles */
+/* personalisación de estilo de panel de imagen doble */
+
+.card-img-top {
+  height: 280px; /* modifica la altura de la caja top */
+  object-fit: cover;
+}
+
+
+.panel-doble-row {
+  height: 400px;   /* ajusta a gusto */
+}
+
+/* Controlar el responsive desktop y móvil */
+@media (max-width: 768px) {
+  .panel-doble-row {
+    height: auto;
+  }
+}
+
+.card-body {
+  padding: 12px 14px;   /* antes Bootstrap mete mucho aire */
+}
+
+.card-body p {
+  margin-bottom: 0;
+}
+
+
 
 /* ========================================================= */
 /*                    MODAL DE BÚSQUEDA (FULLSCREEN)         */
@@ -194,13 +224,13 @@ footer {
 
 /* Caja interna translúcida */
 .modal-form-inner {
-  background: rgba(255, 255, 255, 0.33);
+  background: rgba(255, 255, 255, 0.522);
   backdrop-filter: blur(20px);
 
   border-radius: 16px;
   padding: 40px;
 
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.044);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.077);
 }
 
 /* Fondo del modal (Bootstrap) */
@@ -211,13 +241,13 @@ footer {
 
 /* Tarjeta interna del formulario */
 .form-container {
-  background: rgba(255, 255, 255, 0.136);
+  background: rgba(255, 255, 255, 0.068);
   backdrop-filter: blur(15px);
 
   padding: 30px;
   border-radius: 16px;
 
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.028);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.048);
 }
 
 .form-container label {
@@ -228,14 +258,14 @@ footer {
 .form-container textarea,
 .form-container select {
   backdrop-filter: blur(4px);
-  background: rgba(255,255,255,0.7);
+  background: rgb(255, 255, 255);
   border-radius: 10px !important;
 }
 
 .modal-form-inner h2 {
   font-weight: 700;
   letter-spacing: 0.5px;
-  color: #222;
+  color: #222222;
   margin-bottom: 25px;
 }
 
