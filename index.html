@@ -303,39 +303,38 @@
                         class="form-control"
                         placeholder="Ingrese nombre completo"
                         id="nombreForm"
-                        required
+                        name="nombre" required
                       />
                     </div>
 
                     <div class="mb-3">
-                      <label class="form-label"
-                        >Empresa (Si el trabajo es para una)</label
-                      >
+                      <label class="form-label" title="Nombre de empresa"
+                        >Empresa
+                      </label>
                       <input
                         type="text"
                         class="form-control"
                         placeholder="Ingrese el nombre de la empresa que desea desarrollar el proyecto o deje en blanco"
                         id="empresaForm"
+                        name="empresa"
                       />
                     </div>
 
                     <div class="mb-3">
-                      <label class="form-label">Correo de Contacto</label>
+                      <label class="form-label">Email</label>
                       <input
                         type="email"
                         class="form-control"
                         placeholder="correo@ejemplo.com"
                         id="emailForm"
-                        required
+                        name="email" required
                       />
                     </div>
 
                     <div class="mb-3">
-                      <label class="form-label"
-                        >Tipo de Trabajo a Desarrollar</label
-                      >
-                      <select class="form-select" id="tipoTrabajoForm" required>
-                        <option selected disabled>Elija una opción</option>
+                      <label class="form-label">Tipo de Trabajo</label>
+                      <select class="form-select" id="tipoTrabajoForm" name="tipoTrabajo" required>
+                        <option selected disabled>Seleccione una Opción</option>
                         <option>Digitalización de información</option>
                         <option>Escalación de base de datos</option>
                         <option>Sitio Web</option>
@@ -345,14 +344,13 @@
                     </div>
 
                     <div class="col-md-6">
-                      <label class="form-label"
-                        >Duración esperada del desarrollo</label
-                      >
+                      <label class="form-label">Duración</label>
                       <input
                         type="text"
                         class="form-control"
                         placeholder="Ingrese el tiempo en que espera se desarrolle en totalidad el proyecto"
                         id="duracionForm"
+                        name="duracion"
                       />
                     </div>
 
@@ -363,6 +361,7 @@
                         rows="4"
                         placeholder="Ingrese una descripción detallada del proyecto"
                         id="descripcionForm"
+                        name="descripcion" required
                       ></textarea>
                     </div>
 
@@ -430,39 +429,34 @@
     ></script>
 
     <!--Script para Google Sheets-->
+
     <script>
       const form = document.getElementById("formularioContacto");
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbzcG0yAsBiEfU2iuDkvZ0r2Uc_1d7iSfS0E-n92ZpJyWFWhGxUtcE1iQ-YhjEWt9OXfjA/exec";
 
       form.addEventListener("submit", function (e) {
         e.preventDefault();
 
-        const data = {
-          nombre: document.getElementById("nombreForm").value,
-          empresa: document.getElementById("empresaForm").value,
-          email: document.getElementById("emailForm").value,
-          tipoTrabajo: document.getElementById("tipoTrabajoForm").value,
-          duracion: document.getElementById("duracionForm").value,
-          descripcion: document.getElementById("descripcionForm").value,
-        };
+        // 1. Obtener los datos del formulario como FormData
+        const formData = new FormData(form);
 
-        fetch(
-          "https://script.google.com/macros/s/AKfycbxAq8kn6LgXJKQCgVyyOpQUo8NvTtCcj-vsYWq9U5iw11Ds9GKf7rBekdu2ikOXV9OY/exec",
-          {
-            method: "POST",
-            body: JSON.stringify(data),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        )
-          .then((response) => response.json())
-          .then((result) => {
+        fetch(scriptURL, {
+          method: "POST",
+          mode: "no-cors",
+          // 2. Enviar directamente el FormData. Fetch se encarga de los headers
+          body: formData,
+        })
+          .then((response) => {
+            // Como usamos 'no-cors', la respuesta siempre es opaca.
+            // Se asume el éxito si el fetch no lanza un error.
             alert("Formulario enviado correctamente");
             form.reset();
           })
           .catch((error) => {
-            alert("Error al enviar el formulario");
-            console.error(error);
+            // Manejo de errores
+            console.error("Error al enviar formulario:", error);
+            alert("Hubo un error al enviar el formulario.");
           });
       });
     </script>
